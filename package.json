@@ -11,9 +11,10 @@
     "build": "cd client && npm run build",
     "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\"",
     "start": "node server.js",
-    "heroku-postbuild": "cd client && npm install && npm install --only=dev --no-shrinkwrap && npm run build"
+    "heroku-postbuild": "cd client && npm install --only=dev && npm install && npm run build"
   },
   "dependencies": {
+    "@heroku/buildpack-registry": "^1.0.1",
     "body-parser": "^1.18.3",
     "cors": "2.8.5",
     "dotenv": "7.0.0",
