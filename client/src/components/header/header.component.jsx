@@ -6,6 +6,7 @@ import CartIcon from '../cart-icon/cart-icon.component';
 import CartDropdown from '../cart-dropdown/cart-dropdown.component';
 import { selectCartHidden } from '../../redux/cart/cart.selectors';
 import { selectCurrentUser } from '../../redux/user/user.selectors';
+import { signOutStart } from '../../redux/user/user.actions';
 
 import { ReactComponent as Logo } from '../../assets/crow (1).svg';
 
@@ -15,12 +16,11 @@ import {
   OptionsContainer,
   OptionLink,
 } from './header.styles';
-import { signOutStart } from '../../redux/user/user.actions';
 
 const Header = ({ currentUser, hidden, signOutStart }) => (
   <HeaderContainer>
     <LogoContainer to="/">
-      <Logo style={{ height: '50px', width: '50px' }} />
+      <Logo className="logo" style={{ height: '40px', width: '40px' }} />
     </LogoContainer>
     <OptionsContainer>
       <OptionLink to="/shop">SHOP</OptionLink>
@@ -30,7 +30,7 @@ const Header = ({ currentUser, hidden, signOutStart }) => (
           SIGN OUT
         </OptionLink>
       ) : (
-        <OptionLink to="/signin">SIGN IN</OptionLink>
+        <OptionLink to="/signin">LOGIN</OptionLink>
       )}
       <CartIcon />
     </OptionsContainer>
