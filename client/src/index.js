@@ -5,6 +5,8 @@ import './index.css';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
 
+import * as serviceWorker from './serviceWorkerRegistration';
+
 import { store, persistor } from './redux/store';
 import App from './App';
 
@@ -20,3 +22,5 @@ ReactDOM.render(
   </React.StrictMode>,
   document.getElementById('root')
 );
+
+serviceWorker.register();
